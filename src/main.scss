@@ -1,0 +1,61 @@
+.error {
+  color: #ff2222;
+}
+.emotion-progress {
+  text-align: center;
+  color: #ffffff;
+  li { border-radius: 2px!important; }
+  .icon {
+    &.is-positive {
+      color: #ff2222;
+    }
+    &.is-negative {
+      color: #2222ff;
+    }
+  }
+  .level0 {
+    &.is-active {
+        background-color: #2222ff;
+    }
+  }
+  .level1 {
+    &.is-active {
+        background-color: #7777ff;
+    }
+  }
+  .level2 {
+    &.is-active {
+        background-color: #9999ff;
+    }
+  }
+  .level3 {
+    &.is-active {
+       background-color: #bbbbff;
+    }
+  }
+  .level4 {
+    &.is-active {
+        background-color: #999999;
+    }
+  }
+  .level5 {
+    &.is-active {
+        background-color: #ffbbbb;
+    }
+  }
+  .level6 {
+    &.is-active {
+        background-color: #ff9999;
+    }
+  }
+  .level7 {
+    &.is-active {
+        background-color: #ff7777;
+    }
+  }
+  .level8 {
+    &.is-active {
+        background-color: #ff2222;
+    }
+  }
+}
