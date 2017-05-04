@@ -8184,6 +8184,10 @@ var fetchResult = exports.fetchResult = function fetchResult(originalText) {
     return fetch(url, {
       method: 'POST',
       mode: 'cors',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: (0, _stringify2.default)({
         text: originalText
       })
