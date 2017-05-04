@@ -1,4 +1,8 @@
 import { push } from 'react-router-redux'
+import Config from '../config'
+
+const config = new Config()
+const url = config.apiUrl()
 
 export const confirmForSubmit = (text, history) => {
   if (!text || text === '') {
@@ -44,14 +48,13 @@ export const showErrorApi = res => {
   }
 }
 
-const url = 'http://localhost:8000/emotioncheck'
-
 export const fetchResult = (originalText) => {
   return dispatch => {
     dispatch(sendRequest)
 
     return fetch(url, {
         method: 'POST',
+        mode: 'cors',
         body: JSON.stringify({
         text: originalText 
       })
@@ -77,8 +80,13 @@ export const fetchResult = (originalText) => {
       dispatch(showResult(emotion))
       dispatch(push('/result'))
     })
-    .catch(() => {
+    .catch((e) => {
       console.error('API call error.')
+      dispatch({
+        type: 'ERROR_API',
+        data: e
+      })
+      dispatch(push('/error'))
     })
   }
 }
