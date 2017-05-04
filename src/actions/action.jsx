@@ -53,9 +53,13 @@ export const fetchResult = (originalText) => {
     dispatch(sendRequest)
 
     return fetch(url, {
-        method: 'POST',
-        mode: 'cors',
-        body: JSON.stringify({
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
         text: originalText 
       })
     })
