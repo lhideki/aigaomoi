@@ -1,2 +1,5 @@
 node_modules
 config.js
+/public/index.js
+/public/index.js.map
+/public/main.css
