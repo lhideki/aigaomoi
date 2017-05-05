@@ -10,7 +10,7 @@ export default class Input extends React.Component {
       <article>
         <Error isError = { this.props.isError } errorType = { this.props.errorType } originalText = { this.props.originalText } />
         <div className="ampstart-input inline-block relative m0 p0 mb3" style={{"minWidth": "100%"}}>
-          <textarea name="text" id="text" ref="text" className="block p0 m0" rows="5" maxLength={ 1000 } onChange={ (e) => this.props.onChange(e.target.value) } defaultValue={ this.props.originalText } />
+          <textarea name="text" id="text" ref="text" className="block p0 m0" rows="8" maxLength={ 1000 } onChange={ (e) => this.props.onChange(e.target.value) } defaultValue={ this.props.originalText } />
           <label htmlFor="text" className="top-0 right-0 bottom-0 left-0">
             伝えたいメッセージを入力してください。
           </label>

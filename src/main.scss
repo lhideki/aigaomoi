@@ -1,10 +1,27 @@
+header {
+  background-color: #404040 !important;
+  h1 {
+    font-family: 'Playfair Display SC', serif;
+    color: #ffffff !important;
+    letter-spacing: 0.3em;
+  }
+}
+
+body {
+  letter-spacing: 0.2em;
+}
+
+main {
+  box-shadow: 10px 0px 200px #dedede;
+}
+
 .error {
   color: #ff2222;
 }
 .emotion-progress {
   text-align: center;
   color: #ffffff;
-  li { border-radius: 2px!important; }
+  li { border-radius: 2px !important; }
   .icon {
     &.is-positive {
       color: #ff2222;
