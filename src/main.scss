@@ -3,12 +3,15 @@ header {
   h1 {
     font-family: 'Playfair Display SC', serif;
     color: #ffffff !important;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.2em;
+    .logo {
+      letter-spacing: 0.5em;
+    }
   }
 }
 
 body {
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 
 main {
