@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import thunkMiddleware from 'redux-thunk'
 import { combineReducers, createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import { Router, Route, Switch, IndexRoute } from 'react-router-dom'
+import { Router, Route } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
-import { routerMiddleware, routerReducer, syncHistoryWithStore } from 'react-router-redux'
+import { routerMiddleware, routerReducer } from 'react-router-redux'
 import ReactGA from 'react-ga'
 
 import Config from './config'
@@ -13,7 +13,6 @@ import reducer from './reducers/reducer'
 import Input from './containers/input'
 import Confirm from './containers/confirm'
 import Result from './containers/result'
-
 
 const config = new Config()
 

@@ -10,7 +10,10 @@ export default class Confirm extends React.Component {
     console.debug('update')
   }
   componentWillUpdate(nextProps, nextState) {
-    console.debug('update2')
+    console.debug(nextState)
+    if (nextState === 'SEND') {
+      console.log('send')
+    }
   }
   render() {
     window.props = this.props

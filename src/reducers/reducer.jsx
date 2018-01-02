@@ -16,6 +16,8 @@ export default function reducer(state = initialState, action) {
       return state
     }
     case 'SEND': {
+      state.isProcessing = true
+
       return state
     }
     case 'ERROR_INPUT': {
@@ -33,6 +35,7 @@ export default function reducer(state = initialState, action) {
       return state
     }
     case 'RESULT': {
+      state.isProcessing = false
       state.cleanTextList = state.cleanTextList
       state.emotion = action.emotion
       state.isError = false

@@ -50,7 +50,7 @@ export const showErrorApi = res => {
 
 export const fetchResult = (originalText) => {
   return dispatch => {
-    dispatch(sendRequest)
+    dispatch(sendRequest(originalText))
 
     return fetch(url, {
       method: 'POST',

@@ -1,10 +1,15 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
 
 module.exports = [{
   entry: {
-    js: __dirname + '/src/index.jsx',
+    js: [
+      'babel-polyfill',
+      'whatwg-fetch',
+      path.resolve('./src/index.jsx')
+    ]
   },
-  output: { path: __dirname + '/public', filename: 'index.js' },
+  output: { path: path.resolve('./public'), filename: 'index.js' },
   resolve: {
     extensions: ['.jsx', '.js']
   },
@@ -12,7 +17,7 @@ module.exports = [{
     loaders: [{
       test: /(\.jsx$)|(\.js$)/,
       exclude: /node_modules/,
-      loader: 'babel-loader',
+      loaders: 'babel-loader',
       query: {
         plugins: ['transform-runtime'],
         presets: ['es2015', 'react']
@@ -20,15 +25,16 @@ module.exports = [{
     }]
   },
   devServer: {
-    contentBase: './public'
+    contentBase: './public',
+    historyApiFallback: true
   },
   devtool: 'source-map'
 },
 {
   entry: {
-    style: __dirname + '/src/main.scss'
+    style: path.resolve('./src/main.scss')
   },
-  output: { path: __dirname + '/public', filename: 'main.css' },
+  output: { path: path.resolve('./public'), filename: 'main.css' },
   module: {
     loaders: [{
       test: /\.scss$/,
@@ -39,6 +45,6 @@ module.exports = [{
     }]
   },
   plugins: [
-    new ExtractTextPlugin("main.css")
+    new ExtractTextPlugin('main.css')
   ]
 }]
